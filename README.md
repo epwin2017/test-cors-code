@@ -78,7 +78,7 @@ Header always set Access-Control-Allow-Credentials "true"
 直接通过ide进行打成jar包
 
 2. 部署配置文件
-3. 
+
 2.1 HomeService.json
 功能地图的配置
 主题工具栏的配置
