@@ -1,6 +1,6 @@
 # 跨域配置功能
 
-1. 跨域及单点登录
+## 1. 跨域及单点登录
 1.1 关闭Apache的Basic认证
 ```text
   # 将以下内容注释
@@ -77,7 +77,7 @@ Header always set Access-Control-Allow-Credentials "true"
 1.3 部署对应的类
 直接通过ide进行打成jar包
 
-2. 部署配置文件
+## 2. 部署配置文件
 
 2.1 HomeService.json
 功能地图的配置
@@ -109,7 +109,7 @@ WeLink的Token校验，消息发送的配置
 2.6 TableHeaderCustom.json
 搜索结果以及高级搜索结果的表格的默认配置
 
-3. 解决Background中使用Spring注解的问题
+## 3. 解决Background中使用Spring注解的问题
 
 3.1 编写servlet.xml，用于在BackgroudMethod中使用Spring注解
 在codebase/WEB-INF/目录下新建文件 HonorDispatcher-servlet.xml 文件
@@ -163,7 +163,7 @@ WeLink的Token校验，消息发送的配置
 </beans>
 ```
 
-4. 执行sql
+## 4. 执行sql
 ```sql
 -- 创建用户自定义菜单功能
 CREATE TABLE home_custom_function_menu(
@@ -188,7 +188,7 @@ execute_sql_script.bat com/hihonor/myfavor/Make_pkg_myfavor_Index.sql bop honor1
 execute_sql_script.bat com/hihonor/wftask/Make_pkg_wftask_Table.sql bop honor123
 execute_sql_script.bat com/hihonor/wftask/Make_pkg_wftask_Index.sql bop honor123
 ```
-5. 注册拉模文件
+## 5. 注册拉模文件
 
 文件：codebase/descendentRegistry.properties
 ```properties
@@ -208,7 +208,7 @@ com.hihonor.wftask.model=TaskCloseNotice
 5.2 TaskCloseNotice
 暂时无法在HONOR E Link文档外展示此内容
 
-6. 注册MVC控制器
+## 6. 注册MVC控制器
 在codebase/config/mvc下新建文件 honor-bop-wp-configs.xml 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -228,7 +228,7 @@ com.hihonor.wftask.model=TaskCloseNotice
     
 </beans>
 ```
-7. Jar包以及升级替换
+## 7. Jar包以及升级替换
 ```text
 #依赖的jar包
 jackson-core-asl-1.9.13.jar
@@ -237,11 +237,11 @@ commons-httpclient-3.1.jar
 # 需要删除旧版本的jar包，升级到新版本的jar包
 fastjson-1.2.5.jar    ->   fastjson-1.2.83.jar
 ```
-8. 创建队列
+## 8. 创建队列
 commonExportQueue   流程   类型
-9. 创建清理队列
+## 9. 创建清理队列
 定时清理数据库中记录的数据
-10. 属性创建与关联
+## 10. 属性创建与关联
 ```text
 1. 作业指导书类别【关联到 排拉图、作业指导书】
 名称：作业指导书类别
