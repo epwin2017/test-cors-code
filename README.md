@@ -50,6 +50,7 @@
 > 注意：Windchill的跨域拦截配置，可以不再Windchill中的codebase/WEB-INF/web.xml中配置CORSFilter
 
 针对未启用HTTPS的，可以在HTTPServer/conf/httpd.conf文件中增加以下内容
+`待补充`
 
 针对启用HTTPS的, 需要在conf/conf.d/20-mod_ssl.conf文件中配置以下内容
 ```conf
@@ -75,10 +76,13 @@ Header always set Access-Control-Allow-Credentials "true"
 
 1.3 部署对应的类
 直接通过ide进行打成jar包
+
 2. 部署配置文件
+3. 
 2.1 HomeService.json
 功能地图的配置
 主题工具栏的配置
+
 2.2 CommonConfig.json
 app.home 项目根路径，在导出报表的时候有用到
 运维人员信息配置
@@ -98,12 +102,15 @@ configValue不能是DEV, DEV会固定的发给湧鑫的账号
 ```
 2.4 RequisitionTypeConfig.json
 检索数据时，排除的流程模板的名称配置
+
 2.5 systemIntegrationConfig.json
 WeLink的Token校验，消息发送的配置
+
 2.6 TableHeaderCustom.json
 搜索结果以及高级搜索结果的表格的默认配置
 
 3. 解决Background中使用Spring注解的问题
+
 3.1 编写servlet.xml，用于在BackgroudMethod中使用Spring注解
 在codebase/WEB-INF/目录下新建文件 HonorDispatcher-servlet.xml 文件
 文件内容如下:
@@ -136,6 +143,7 @@ WeLink的Token校验，消息发送的配置
     <import resource="classpath:/com/hihonor/bop/adapter/core/resource/config/*.exceptions.xml"/>
 </beans>
 ```
+
 3.2 编写honor-bop-wp-configs.xml文件，用于扫描和XML注入Bean
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -154,6 +162,7 @@ WeLink的Token校验，消息发送的配置
     <import resource="classpath:/com/hihonor/bop/adapter/core/resource/config/*.exceptions.xml"/>
 </beans>
 ```
+
 4. 执行sql
 ```sql
 -- 创建用户自定义菜单功能
@@ -180,6 +189,7 @@ execute_sql_script.bat com/hihonor/wftask/Make_pkg_wftask_Table.sql bop honor123
 execute_sql_script.bat com/hihonor/wftask/Make_pkg_wftask_Index.sql bop honor123
 ```
 5. 注册拉模文件
+
 文件：codebase/descendentRegistry.properties
 ```properties
 wt.fc.WTObject=com.hihonor.myfavor.model.MyFavor
@@ -190,12 +200,15 @@ wt.fc.WTObject=com.hihonor.wftask.model.TaskCloseNotice
 com.hihonor.myfavor.model=MyFavor
 com.hihonor.wftask.model=TaskCloseNotice
 ```
+
 5.1 MyFavor
 目前用来存储关闭的公告弹窗
 暂时无法在HONOR E Link文档外展示此内容
+
 5.2 TaskCloseNotice
 暂时无法在HONOR E Link文档外展示此内容
-7. 注册MVC控制器
+
+6. 注册MVC控制器
 在codebase/config/mvc下新建文件 honor-bop-wp-configs.xml 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
